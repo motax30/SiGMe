@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  postgres-compose-sigme:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "15432:5432"
+    volumes:
+      - ~/Documents/carreira/sgc_web/postgres-data:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  pgadmin-adriano:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "pgadmin@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "pgadmin"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres-compose-sigme
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
