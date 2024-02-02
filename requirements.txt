@@ -9,7 +9,7 @@ djangorestframework-jwt==1.11.0
 djangorestframework-simplejwt
 djangorestframework-filters==1.0.0.dev2
 django-better-admin-arrayfield==1.4.2
-Pillow==8.3.2
+Pillow==10.2.0
 psycopg2-binary==2.8.6
 psycopg2==2.8.6
 python-decouple==3.7
